@@ -1,0 +1,737 @@
+
+
+/* Grid
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 120px auto 120px auto;
+  padding: 0 20px;
+  box-sizing: border-box; }
+.column,
+.columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box; }
+
+.project {
+  -webkit-transform: scale(1.00);
+  transition: 0.3s;
+}
+.project:hover {
+  -webkit-transform: scale(1.02);
+  transition: 0.25s;
+}
+/* For devices larger than 400px */
+@media (min-width: 400px) {
+  .container {
+    width: 85%;
+    padding: 0; }
+}
+
+/* For devices larger than 550px */
+@media (min-width: 550px) {
+  .container {
+    width: 80%; }
+  .column,
+  .columns {
+    margin-left: 4%; }
+  .column:first-child,
+  .columns:first-child {
+    margin-left: 0; }
+
+  .one.column,
+  .one.columns                    { width: 4.66666666667%; }
+  .two.columns                    { width: 13.3333333333%; }
+  .three.columns                  { width: 22%;            }
+  .four.columns                   { width: 30.6666666667%; }
+  .five.columns                   { width: 39.3333333333%; }
+  .six.columns                    { width: 48%;            }
+  .seven.columns                  { width: 56.6666666667%; }
+  .eight.columns                  { width: 65.3333333333%; }
+  .nine.columns                   { width: 74.0%;          }
+  .ten.columns                    { width: 82.6666666667%; }
+  .eleven.columns                 { width: 91.3333333333%; }
+  .twelve.columns                 { width: 100%; margin-left: 0; }
+
+  .one-third.column               { width: 30.6666666667%; }
+  .two-thirds.column              { width: 65.3333333333%; }
+
+  .one-half.column                { width: 48%; }
+
+  /* Offsets */
+  .offset-by-one.column,
+  .offset-by-one.columns          { margin-left: 8.66666666667%; }
+  .offset-by-two.column,
+  .offset-by-two.columns          { margin-left: 17.3333333333%; }
+  .offset-by-three.column,
+  .offset-by-three.columns        { margin-left: 26%;            }
+  .offset-by-four.column,
+  .offset-by-four.columns         { margin-left: 34.6666666667%; }
+  .offset-by-five.column,
+  .offset-by-five.columns         { margin-left: 43.3333333333%; }
+  .offset-by-six.column,
+  .offset-by-six.columns          { margin-left: 52%;            }
+  .offset-by-seven.column,
+  .offset-by-seven.columns        { margin-left: 60.6666666667%; }
+  .offset-by-eight.column,
+  .offset-by-eight.columns        { margin-left: 69.3333333333%; }
+  .offset-by-nine.column,
+  .offset-by-nine.columns         { margin-left: 78.0%;          }
+  .offset-by-ten.column,
+  .offset-by-ten.columns          { margin-left: 86.6666666667%; }
+  .offset-by-eleven.column,
+  .offset-by-eleven.columns       { margin-left: 95.3333333333%; }
+
+  .offset-by-one-third.column,
+  .offset-by-one-third.columns    { margin-left: 34.6666666667%; }
+  .offset-by-two-thirds.column,
+  .offset-by-two-thirds.columns   { margin-left: 69.3333333333%; }
+
+  .offset-by-one-half.column,
+  .offset-by-one-half.columns     { margin-left: 52%; }
+
+}
+
+
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* NOTE
+html is set to 62.5% so that all the REM measurements throughout Skeleton
+are based on 10px sizing. So basically 1.5rem = 15px :) */
+html {
+  font-size: 62.5%; }
+body {
+  font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
+  background-color: #FCFCFC;
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: -apple-system, BlinkMacSystemFont, 
+    "Segoe UI", "Roboto", "Oxygen", 
+    "Ubuntu", "Cantarell", "Fira Sans", 
+    "Droid Sans", "Helvetica Neue", sans-serif;}
+
+
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 300; }
+h1 { font-size: 4.0rem; color: #1D2129; line-height: 1.2;  letter-spacing: -.1rem;}
+h2 { font-size: 3.6rem; color: #1D2129; line-height: 1.25; letter-spacing: -.1rem; }
+h3 { font-size: 3.0rem; color: #1D2129; line-height: 1.3;  letter-spacing: -.1rem; }
+h4 { font-size: 2.4rem; color: #1D2129; line-height: 1.35; letter-spacing: -.08rem; }
+h5 { font-size: 1.8rem; color: #1D2129; line-height: 1.5;  letter-spacing: -.05rem; font-weight: 400;}
+h6 { font-size: 1.5rem; color: #1D2129; line-height: 1.6;  letter-spacing: 0; }
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+  h1 { font-size: 5.0rem; }
+  h2 { font-size: 4.2rem; }
+  h3 { font-size: 3.6rem; }
+  h4 { font-size: 3.0rem; }
+  h5 { font-size: 2.4rem; }
+  h6 { font-size: 1.5rem; }
+}
+
+p {
+  margin-top: 0; 
+  color: #4B4F56;
+  }
+img {
+  box-shadow: 0 0 0 0 rgba(0,0,0,0.24), 0 9px 25px 1px rgba(0,0,0,0.18), 0 10px 45px 0 rgba(0,0,0,0.12);
+  border-radius: 4px;
+  display:block; 
+  margin:auto;
+}
+
+
+/* Links
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+a {
+  text-decoration: none;
+  color: #90949C;
+}
+a:visited { text-decoration: none; color:#90949C; }
+a:hover { text-decoration: none; color: #1D2129; }
+a:focus { text-decoration: none; color:#90949C; }
+
+
+
+/* Buttons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  color: #555;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box; }
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+  color: #333;
+  border-color: #888;
+  outline: 0; }
+.button.button-primary,
+button.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary {
+  color: #FFF;
+  background-color: #33C3F0;
+  border-color: #33C3F0; }
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="reset"].button-primary:hover,
+input[type="button"].button-primary:hover,
+.button.button-primary:focus,
+button.button-primary:focus,
+input[type="submit"].button-primary:focus,
+input[type="reset"].button-primary:focus,
+input[type="button"].button-primary:focus {
+  color: #FFF;
+  background-color: #1EAEDB;
+  border-color: #1EAEDB; }
+
+
+/* Forms
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+  height: 38px;
+  padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box; }
+/* Removes awkward default styles on some inputs for iOS */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; }
+textarea {
+  min-height: 65px;
+  padding-top: 6px;
+  padding-bottom: 6px; }
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid #33C3F0;
+  outline: 0; }
+label,
+legend {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 600; }
+fieldset {
+  padding: 0;
+  border-width: 0; }
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline; }
+label > .label-body {
+  display: inline-block;
+  margin-left: .5rem;
+  font-weight: normal; }
+
+
+/* Lists
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+ul {
+  list-style: circle inside; }
+ol {
+  list-style: decimal inside; }
+ol, ul {
+  padding-left: 0;
+  margin-top: 0; }
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin: 1.5rem 0 1.5rem 3rem;
+  font-size: 90%; }
+li {
+  margin-bottom: 1rem; }
+
+
+/* Code
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+code {
+  padding: .2rem .5rem;
+  margin: 0 .2rem;
+  font-size: 90%;
+  white-space: nowrap;
+  background: #F1F1F1;
+  border: 1px solid #E1E1E1;
+  border-radius: 4px; }
+pre > code {
+  display: block;
+  padding: 1rem 1.5rem;
+  white-space: pre; }
+
+
+/* Tables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #E1E1E1; }
+th:first-child,
+td:first-child {
+  padding-left: 0; }
+th:last-child,
+td:last-child {
+  padding-right: 0; }
+
+
+/* Spacing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+button,
+.button {
+  margin-bottom: 1rem; }
+input,
+textarea,
+select,
+fieldset {
+  margin-bottom: 1.5rem; }
+pre,
+blockquote,
+dl,
+figure,
+table,
+p,
+ul,
+ol,
+form {
+  margin-bottom: 2.5rem; }
+
+
+/* Utilities
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.u-full-width {
+  width: 100%;
+  box-sizing: border-box; }
+.u-max-full-width {
+  max-width: 100%;
+  box-sizing: border-box; }
+.u-pull-right {
+  float: right; }
+.u-pull-left {
+  float: left; }
+
+
+/* Misc
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+hr {
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+  border-width: 0;
+  border-top: 1px solid #E1E1E1; }
+
+
+/* Clearing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Self Clearing Goodness */
+.container:after,
+.row:after,
+.u-cf {
+  content: "";
+  display: table;
+  clear: both; }
+
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*
+Note: The best way to structure the use of media queries is to create the queries
+near the relevant code. For example, if you wanted to change the styles for buttons
+on small devices, paste the mobile query code up in the buttons section and style it
+there.
+*/
+
+/* Navbar */
+.navbar + .docs-section {
+  border-top-width: 0; }
+.navbar,
+.navbar-spacer {
+  display: block;
+  width: 100%;
+  height: 6.5rem;
+  background: #fff;
+  z-index: 99;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee; }
+.navbar-spacer {
+  display: none; }
+.navbar > .container {
+  width: 100%; }
+.navbar-list {
+  list-style: none;
+  margin-bottom: 0; }
+.navbar-item {
+  position: relative;
+  float: left;
+  margin-bottom: 0; }
+.navbar-link {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  margin-right: 35px;
+  text-decoration: none;
+  line-height: 6.5rem;
+  color: #90949C; }
+.navbar-link:hover{
+  color: #1D2129;
+}
+.navbar-link.active {
+  color: #1D2129; }
+.has-docked-nav .navbar {
+  position: fixed;
+  top: 0;
+  left: 0; }
+.has-docked-nav .navbar-spacer {
+  display: block; }
+/* Re-overiding the width 100% declaration to match size of % based container */
+.has-docked-nav .navbar > .container {
+  width: 80%; }
+
+/*Portfolio Pieces*/
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateY(0.05%);
+    
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    
+  }
+}
+.dd {
+  animation: 0.75s ease-in 0s 1 slideInFromLeft;
+}
+.portfolio {
+  margin-top: -96px;  
+}
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    cursor: pointer; /* Add a mouse pointer on hover */
+}
+i {
+  margin-top: 20px;
+}
+.book {
+  width: 202px;
+  height: 315px;
+}
+
+.read{
+  width: 100px;
+  margin: 0 auto;
+}
+
+
+
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 550px) {}
+
+/* Larger than tablet */
+@media (min-width: 750px) {}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}
+
+h4{
+  padding-top: 2rem;
+}
+
+.grid { 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 20px;
+  align-items: center;
+  }
+
+ .card{
+
+ } 
+
+.grid img {
+    
+  max-width: 100%;
+}
+
+.dummy{
+  padding: 8rem;
+  max-width: 60%;
+}
+.dummyG{
+  padding: 8rem;
+  max-width: 90%;
+}
+
+.sidebar{
+  padding: 8rem;
+  max-width: 40%;
+}
+
+.flex{
+  display: flex;
+  flex-direction: row;
+}
+
+ul>li{
+    list-style-type: none;
+}
+
+}
+* {
+  box-sizing: border-box;
+}
+nav ul {
+  float: right;
+}
+nav ul li {
+  display: inline-block;
+  float: left;
+}
+nav ul li:not(:first-child) {
+  margin-left: 25px;
+}
+nav ul li a {
+  display: inline-block;
+  outline: none;
+  color: #1f2227;
+  font-size: 16px;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+nav ul li a:hover {
+  color: #808080;
+  text-decoration: none;
+}
+@media screen and (max-width: 560px) {
+  .nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: #1f2227;
+    opacity: 0;
+    transition: all 0.2s ease;
+  }
+  .nav-container ul {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+  .nav-container ul li {
+    display: block;
+    float: none;
+    width: 100%;
+    text-align: right;
+    margin-bottom: 10px;
+  }
+  .nav-container ul li:nth-child(1) a {
+    transition-delay: 0.2s;
+  }
+  .nav-container ul li:nth-child(2) a {
+    transition-delay: 0.3s;
+  }
+  .nav-container ul li:nth-child(3) a {
+    transition-delay: 0.4s;
+  }
+  .nav-container ul li:nth-child(4) a {
+    transition-delay: 0.5s;
+  }
+  .nav-container ul li:not(:first-child) {
+    margin-left: 0;
+  }
+  .nav-container ul li a {
+    padding: 10px 25px;
+    opacity: 0;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    transform: translateY(-20px);
+    transition: all 0.2s ease;
+  }
+  .nav-open {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    display: block;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    z-index: 9999;
+    border-radius: 50%;
+  }
+  .nav-open i {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #1f2227;
+    border-radius: 2px;
+    margin-left: 14px;
+  }
+  .nav-open i:nth-child(1) {
+    margin-top: 16px;
+  }
+  .nav-open i:nth-child(2) {
+    margin-top: 4px;
+    opacity: 1;
+  }
+  .nav-open i:nth-child(3) {
+    margin-top: 4px;
+  }
+}
+#nav:checked + .nav-open {
+  transform: rotate(45deg);
+}
+#nav:checked + .nav-open i {
+  background: #fff;
+  transition: transform 0.2s ease;
+}
+#nav:checked + .nav-open i:nth-child(1) {
+  transform: translateY(6px) rotate(180deg);
+}
+#nav:checked + .nav-open i:nth-child(2) {
+  opacity: 0;
+}
+#nav:checked + .nav-open i:nth-child(3) {
+  transform: translateY(-6px) rotate(90deg);
+}
+#nav:checked ~ .nav-container {
+  z-index: 9990;
+  opacity: 1;
+}
+#nav:checked ~ .nav-container ul li a {
+  opacity: 1;
+  transform: translateY(0);
+}
+.hidden {
+  display: none;
+  opacity: 0;
+}
+.name{
+  width: 200px;
+  margin: 0 auto;
+  padding: 3rem;
+}
+.video{
+  padding: 2rem;
+}
+#top{
+  color: gray;
+}
+
+.soc{
+  display: flex;
+  justify-content: center;
+}
+
+.soc>a{
+  margin: 1rem;
+  color: gray;
+font-size: 2rem;
+}
+#footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 1rem;
+  justify-content: space-between;
+}
+ul.bycategories {
+margin: 0;
+padding: 0;
+}
+ul.bycategories li {
+list-style: none; 
+list-style-type: none;
+margin: 0; 
+padding: 0;
+}
+ul.bycategories li a {
+list-style: none; 
+list-style-type: none;
+margin: 0 20px 15px 0; 
+float: left; 
+background: #eee; 
+color: #464646; 
+padding: 5px 10px;
+border-radius: 5px; 
+-moz-border-radius: 5px; 
+-webkit-border-radius: 5px;
+}
+ul.bycategories li a:hover{
+text-decoration: none; 
+background: #ff6200; 
+color: #fff;
+}
+.clear{clear: both;}
